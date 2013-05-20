@@ -1,0 +1,63 @@
+import javax.swing.JOptionPane;
+
+public class testAnimal {
+
+  public static void main(String[] args) {
+		
+		Animal playChoice = new Animal();
+		monkeyClass playChoice1 = new monkeyClass();
+		humanClass playChoice2 = new humanClass();
+		robotClass playChoice3 = new robotClass();	
+
+
+		
+		int playerChoice=0;
+		boolean retry = false;
+		int timeP;
+		
+		do
+		{
+		playerChoice = Integer.parseInt(JOptionPane.showInputDialog("Would you like to choose a \n1) Monkey?\n2) Human? \n3) Robot?"));
+		
+		switch (playerChoice)
+		{
+		case 1:
+			playChoice1.setChoice();
+			JOptionPane.showMessageDialog(null, "You chosed " + playChoice.getChoice());
+			playChoice1.setVal();
+			timeP = Integer.parseInt(JOptionPane.showInputDialog("How many seconds would you like you " + playChoice.getChoice() + " to run for?"));
+			Animal.time(timeP);
+			playChoice1.setDis();
+			break;
+			
+		case 2:
+			playChoice2.setChoice();
+			JOptionPane.showMessageDialog(null, "You chosed " + playChoice.getChoice());
+			playChoice2.setVal();
+			timeP = Integer.parseInt(JOptionPane.showInputDialog("How many seconds would you like you " + playChoice.getChoice() + " to run for?"));
+			Animal.time(timeP);
+			playChoice2.setDis();
+			break;
+			
+		case 3:
+			playChoice3.setChoice();
+			JOptionPane.showMessageDialog(null, "You chosed " + playChoice.getChoice());
+			playChoice3.setVal();
+			timeP = Integer.parseInt(JOptionPane.showInputDialog("How many seconds would you like you " + playChoice.getChoice() + " to run for?"));
+			Animal.time(timeP);
+			playChoice3.setDis();
+			break;
+			
+		default:
+			JOptionPane.showMessageDialog(null, "Please choose a valid option");
+			retry = true;
+			break;
+		}
+		}while (retry == true);
+		
+		JOptionPane.showMessageDialog(null, "Your " + playChoice.getChoice() + "Traveled a total of " + Animal.distanceTraveled + " blocks");
+		
+		playChoice.lastMoves();
+	}
+
+}
