@@ -1,0 +1,24 @@
+
+public class monkeyClass extends Animal {
+  
+	public void setChoice()
+	{
+	super.setChoice("monkey");
+	}
+	
+	
+	public void setVal()
+	{
+		super.setValues("Mike", "male", 18, 130);
+	}
+	
+	public void setDis()
+	{
+		super.accDisTra(1, 4, 4);
+	}
+	
+	public void talk()
+	{
+	super.talk("OOOHH OH AH AH AHH");
+	}
+}
