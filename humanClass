@@ -1,0 +1,23 @@
+
+public class humanClass extends Animal{
+
+public void setChoice()
+{
+super.setChoice("human");
+}
+
+public void setVal()
+{
+  super.setValues("Albert", "male", 25, 160);
+}
+
+public void setDis()
+{
+	super.accDisTra(2, 5, 10);
+}
+
+public void talk()
+{
+super.talk("Whats up?");
+}
+}
