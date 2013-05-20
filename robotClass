@@ -1,5 +1,5 @@
 
-public class humanClass extends Animal{
+public class robotClass extends Animal{
 
 public void setChoice()
 {
@@ -8,16 +8,16 @@ super.setChoice("human");
 
 public void setVal()
 {
-  super.setValues("Albert", "male", 25, 160);
+	super.setValues("Ultron", "boy", 5, 200);
 }
 
 public void setDis()
 {
-	super.accDisTra(2, 5, 10);
+	super.accDisTra(4, 4, 16);
 }
 
 public void talk()
 {
-super.talk("Whats up?");
+super.talk("BEEP BEEP BOOP BEEP");
 }
 }
