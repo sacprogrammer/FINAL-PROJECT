@@ -1,0 +1,79 @@
+import javax.swing.JOptionPane;
+
+public class Animal {
+  
+	private static String animalChoice;
+	private static int time;
+	private int timer;
+	static int distanceTraveled;
+	private static int arrayCount=0;
+	private static int[] replayMovements = new int[30];
+	
+	public static void time(int playerTime)
+	{
+		time = playerTime;
+	}
+	
+	public int timer()
+	{
+		timer = time;
+		return timer;
+	}
+	
+	public void setChoice(String choice)
+	{
+		animalChoice = choice;
+	}
+	
+	public static String getChoice()
+	{
+		return animalChoice;
+	}
+	
+	public static void setValues(String theName, String theGender, int theAge, int theWeight)
+	{
+		JOptionPane.showMessageDialog(null,"The "+ getChoice() + "'s name is " + theName + ", its gender is " + theGender + "\nIt is " + theAge + "yrs old and weights " + theWeight + " lbs");
+	}
+	
+	public int accDisTra(int accD, int accT, int speedD)
+	{
+		int accDistance=0;
+		int speedDistance = 0;
+		for ( int i = 1; i <= accT; i++ )
+		{
+			accDistance = (accD * i) + accDistance;
+			replayMovements[arrayCount ++]=accDistance;
+		}
+		if (time-accT >0)
+			for ( int i = 1; i <= time-accT; i++ )
+				{
+				speedDistance = speedD + speedDistance;
+				replayMovements[arrayCount ++]=speedDistance;
+				}
+		distanceTraveled = accDistance + speedDistance;
+		return distanceTraveled;
+	}
+	
+	public static int distanceTraveled()
+	{
+		return distanceTraveled;
+	}
+	
+	
+	public void lastMoves()
+	{
+		for(int i=0; i<arrayCount;i++)
+		{
+		JOptionPane.showMessageDialog(null,"Your last moves have been " + replayMovements[i]);
+		}
+	}
+	
+	public void talk(String talking)
+	{
+
+		JOptionPane.showMessageDialog(null,"Your " + getChoice() + " says " + talking);
+
+	}
+	
+}
+
